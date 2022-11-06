@@ -1,4 +1,6 @@
 import dependenciesGroups.androidCompose
+import dependenciesGroups.kViewModel
+import dependenciesGroups.odyssey
 
 plugins {
     id("multiplatform-compose-setup")
@@ -10,7 +12,10 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(project(":common:auth:root"))
-                implementation(Dependencies.Other.ViewModel.core)
+                implementation(project(":common:core-compose"))
+                implementation(project(":common:core-utils"))
+                kViewModel()
+                odyssey()
             }
         }
 

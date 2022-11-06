@@ -23,3 +23,14 @@ fun KotlinDependencyHandler.androidCompose() {
     implementation(Dependencies.Android.Compose.tooling)
     implementation(Dependencies.Android.Compose.icons)
 }
+
+fun KotlinDependencyHandler.odyssey() {
+    api(Dependencies.Other.Navigation.compose)
+    api(Dependencies.Other.Navigation.core)
+}
+
+fun KotlinDependencyHandler.kViewModel(){
+    implementation(Dependencies.Other.ViewModel.core)
+    implementation(Dependencies.Other.ViewModel.compose)
+    implementation(Dependencies.Other.ViewModel.odyssey)
+}

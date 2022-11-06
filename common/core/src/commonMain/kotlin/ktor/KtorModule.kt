@@ -12,11 +12,10 @@ import io.ktor.client.request.header
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import org.kodein.di.DI
-import org.kodein.di.bind
-import org.kodein.di.singleton
+import org.kodein.di.bindSingleton
 
 internal val ktorModule = DI.Module("ktorModule") {
-    bind<HttpClient>() with singleton {
+    bindSingleton {
         /**
          * HttpClient'у Ktor необходимо обязательно передавать движок для работы
          */

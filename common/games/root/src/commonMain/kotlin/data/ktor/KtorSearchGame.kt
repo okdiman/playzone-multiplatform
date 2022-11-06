@@ -13,7 +13,7 @@ data class KtorSearchGame(
     @SerialName("size") val size: String
 )
 
-fun KtorSearchGame.mapToGame(): Game {
+fun KtorSearchGame.mapToDomain(): Game {
     return Game(
         gameId = gameId,
         title = title
