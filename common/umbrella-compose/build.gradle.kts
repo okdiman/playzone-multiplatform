@@ -17,6 +17,7 @@ kotlin {
                 implementation(project(":common:auth:compose"))
                 implementation(project(":common:games:root"))
                 implementation(project(":common:tournaments:root"))
+                implementation(project(":common:umbrella-core"))
                 odyssey()
                 kViewModel()
             }

@@ -1,11 +1,11 @@
 package database
 
-import com.squareup.sqldelight.db.SqlDriver
-import com.squareup.sqldelight.sqlite.driver.JdbcSqliteDriver
-import platform.PlatformConfiguration
-
-actual class DbDriverFactory actual constructor(platformConfiguration: PlatformConfiguration) {
-    actual fun createDriver(schema: SqlDriver.Schema, name: String): SqlDriver {
-        return JdbcSqliteDriver("jdbc:sqlite:$name")
-    }
-}
+//import com.squareup.sqldelight.db.SqlDriver
+//import com.squareup.sqldelight.sqlite.driver.JdbcSqliteDriver
+//import platform.PlatformConfiguration
+//
+//actual class DbDriverFactory actual constructor(platformConfiguration: PlatformConfiguration) {
+//    actual fun createDriver(schema: SqlDriver.Schema, name: String): SqlDriver {
+//        return JdbcSqliteDriver("jdbc:sqlite:$name")
+//    }
+//}

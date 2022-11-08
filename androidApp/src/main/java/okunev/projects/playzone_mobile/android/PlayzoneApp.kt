@@ -7,10 +7,6 @@ import platform.PlatformConfiguration
 class PlayzoneApp : Application() {
     override fun onCreate() {
         super.onCreate()
-        initPlatformSDK()
+        PlatformSDK.init(configuration = PlatformConfiguration(applicationContext))
     }
-}
-
-fun PlayzoneApp.initPlatformSDK() {
-    PlatformSDK.init(configuration = PlatformConfiguration(applicationContext))
 }
