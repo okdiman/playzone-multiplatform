@@ -30,6 +30,7 @@ class LoginViewModel : BaseSharedViewModel<LoginViewState, LoginAction, LoginEve
             viewState = try {
                 val response = authRepository.login(viewState.email, viewState.password)
                 if (response.token.isNotBlank()) {
+                    viewAction = LoginAction.OpenMainFlow
                     viewState.copy(email = "", password = "", isSending = false)
                 } else {
                     viewState.copy(isSending = false)
