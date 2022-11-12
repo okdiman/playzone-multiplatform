@@ -34,3 +34,8 @@ fun KotlinDependencyHandler.kViewModel(){
     implementation(Dependencies.Other.ViewModel.compose)
     implementation(Dependencies.Other.ViewModel.odyssey)
 }
+
+fun KotlinDependencyHandler.settings(){
+    implementation(Dependencies.Settings.core)
+    implementation(Dependencies.Settings.noargs)
+}

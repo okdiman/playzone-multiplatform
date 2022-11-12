@@ -1,5 +1,6 @@
 import dependenciesGroups.commonKotlin
 import dependenciesGroups.commonKtor
+import dependenciesGroups.settings
 
 plugins {
     id("multiplatform-setup")
@@ -13,6 +14,7 @@ kotlin {
             dependencies {
                 commonKotlin()
                 commonKtor()
+                settings()
                 api(Dependencies.Kodein.core)
 //                api(Dependencies.SqlDelight.core)
             }

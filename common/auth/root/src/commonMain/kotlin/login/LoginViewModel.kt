@@ -13,6 +13,10 @@ class LoginViewModel : BaseSharedViewModel<LoginViewState, LoginAction, LoginEve
 ) {
     private val authRepository = instance<AuthRepository>()
 
+    init {
+        checkUserLoggedIn()
+    }
+
     override fun obtainEvent(viewEvent: LoginEvent) {
         when (viewEvent) {
             is LoginEvent.LoginClick -> sendLogin()
@@ -38,6 +42,12 @@ class LoginViewModel : BaseSharedViewModel<LoginViewState, LoginAction, LoginEve
             } catch (e: Exception) {
                 viewState.copy(isSending = false)
             }
+        }
+    }
+
+    private fun checkUserLoggedIn() {
+        if (authRepository.isUserLoggedIn()) {
+            viewAction = LoginAction.OpenMainFlow
         }
     }
 

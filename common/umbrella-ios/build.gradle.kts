@@ -38,6 +38,8 @@ kotlin {
             export(project(":common:games:root"))
             export(project(":common:tournaments:api"))
             export(project(":common:tournaments:root"))
+            export(project(":common:main:api"))
+            export(project(":common:main:root"))
             export(project(":common:umbrella-core"))
         }
     }
@@ -53,6 +55,8 @@ kotlin {
                 implementation(project(":common:games:root"))
                 implementation(project(":common:tournaments:api"))
                 implementation(project(":common:tournaments:root"))
+                implementation(project(":common:main:api"))
+                implementation(project(":common:main:root"))
                 implementation(project(":common:umbrella-core"))
             }
         }
@@ -66,6 +70,8 @@ kotlin {
                 api(project(":common:games:root"))
                 api(project(":common:tournaments:api"))
                 api(project(":common:tournaments:root"))
+                api(project(":common:main:api"))
+                api(project(":common:main:root"))
                 api(project(":common:umbrella-core"))
             }
         }

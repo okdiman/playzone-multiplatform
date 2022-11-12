@@ -14,6 +14,11 @@ object Dependencies {
         }
     }
 
+    object Settings {
+        const val core = "com.russhwolf:multiplatform-settings:1.0.0-RC"
+        const val noargs = "com.russhwolf:multiplatform-settings-no-arg:1.0.0-RC"
+    }
+
     object Ktor {
         private const val version = "2.1.3"
         const val core = "io.ktor:ktor-client-core:$version"
