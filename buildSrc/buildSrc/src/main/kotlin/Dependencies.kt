@@ -14,6 +14,14 @@ object Dependencies {
         }
     }
 
+    object Image {
+        object Coil {
+            private const val version = "2.2.2"
+            const val core = "io.coil-kt:coil:2.2.2"
+            const val compose = "io.coil-kt:coil-compose:2.2.2"
+        }
+    }
+
     object Settings {
         const val core = "com.russhwolf:multiplatform-settings:1.0.0-RC"
         const val noargs = "com.russhwolf:multiplatform-settings-no-arg:1.0.0-RC"

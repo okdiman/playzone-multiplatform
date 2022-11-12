@@ -39,3 +39,8 @@ fun KotlinDependencyHandler.settings(){
     implementation(Dependencies.Settings.core)
     implementation(Dependencies.Settings.noargs)
 }
+
+fun KotlinDependencyHandler.coil(){
+    implementation(Dependencies.Image.Coil.core)
+    implementation(Dependencies.Image.Coil.compose)
+}
