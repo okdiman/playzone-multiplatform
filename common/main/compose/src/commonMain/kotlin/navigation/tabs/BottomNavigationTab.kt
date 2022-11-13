@@ -8,7 +8,7 @@ import ru.alexgladkov.odyssey.compose.navigation.bottom_bar_navigation.TabConfig
 import ru.alexgladkov.odyssey.compose.navigation.bottom_bar_navigation.TabItem
 import theme.Theme
 
-class BaseTab(private val title: String) : TabItem() {
+class BottomNavigationTab(private val title: String) : TabItem() {
     override val configuration: TabConfiguration
         @Composable
         get() = TabConfiguration(

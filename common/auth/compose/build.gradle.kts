@@ -1,4 +1,3 @@
-import dependenciesGroups.androidCompose
 import dependenciesGroups.kViewModel
 import dependenciesGroups.odyssey
 
@@ -16,12 +15,6 @@ kotlin {
                 implementation(project(":common:core-utils"))
                 kViewModel()
                 odyssey()
-            }
-        }
-
-        androidMain {
-            dependencies {
-                androidCompose()
             }
         }
     }

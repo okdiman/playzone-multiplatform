@@ -14,10 +14,10 @@ import theme.AppTheme
 import theme.Theme
 
 fun ComponentActivity.setupThemedNavigation() {
-    val rootController = RootComposeBuilder().apply { generateGraph() }.build().apply {
-        setupWithActivity(this@setupThemedNavigation)
-        setupWithViewModels()
-    }
+    val rootController = RootComposeBuilder().apply { generateGraph() }.build()
+    rootController.setupWithActivity(this)
+    rootController.setupWithViewModels()
+
     setContent {
         AppTheme {
             rootController.backgroundColor = Theme.colors.primaryBackground
