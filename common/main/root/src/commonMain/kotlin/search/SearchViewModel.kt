@@ -3,6 +3,7 @@ package search
 import GamesRepository
 import com.adeo.kviewmodel.BaseSharedViewModel
 import di.Inject.instance
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -30,7 +31,7 @@ class SearchViewModel : BaseSharedViewModel<SearchViewState, SearchAction, Searc
 
     private fun searchGame(query: String) {
         searchJob?.cancel()
-        searchJob = viewModelScope.launch {
+        searchJob = viewModelScope.launch(Dispatchers.Default) {
             viewState = viewState.copy(query = query)
             delay(500)
             val games = gamesRepository.searchGame(query)

@@ -4,6 +4,7 @@ import com.adeo.kviewmodel.BaseSharedViewModel
 import home.models.HomeAction
 import home.models.HomeEvent
 import home.models.HomeViewState
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class HomeViewModel : BaseSharedViewModel<HomeViewState, HomeAction, HomeEvent>(
@@ -20,7 +21,7 @@ class HomeViewModel : BaseSharedViewModel<HomeViewState, HomeAction, HomeEvent>(
     }
 
     private fun onUserProfileClicked() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.Default) {
             viewAction = HomeAction.ShowUserProfile
         }
     }

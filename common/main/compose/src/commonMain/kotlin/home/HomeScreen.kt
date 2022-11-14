@@ -1,7 +1,6 @@
 package home
 
 import NavigationTree
-import android.util.Log
 import androidx.compose.runtime.Composable
 import com.adeo.kviewmodel.compose.observeAsState
 import com.adeo.kviewmodel.odyssey.StoredViewModel
@@ -21,7 +20,6 @@ fun HomeScreen() {
 
         when (action.value) {
             is HomeAction.ShowUserProfile -> {
-                Log.e("TAG", "ShowUserProfile action")
                 rootController.push(screen = NavigationTree.Home.Profile.name)
             }
             else -> {}

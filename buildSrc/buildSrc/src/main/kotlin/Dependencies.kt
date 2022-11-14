@@ -9,7 +9,7 @@ object Dependencies {
         }
 
         object Coroutines {
-            private const val version = "1.6.0"
+            private const val version = "1.6.4"
             const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
         }
     }
@@ -61,7 +61,7 @@ object Dependencies {
         const val composeActivity = "androidx.activity:activity-compose:$composeActivityVersion"
 
         object Compose {
-            private const val version = "1.3.0"
+            private const val version = "1.2.0"
             const val ui = "androidx.compose.ui:ui:$version"
             const val material = "androidx.compose.material:material:$version"
             const val tooling = "androidx.compose.ui:ui-tooling:$version"

@@ -3,6 +3,7 @@ package login
 import AuthRepository
 import com.adeo.kviewmodel.BaseSharedViewModel
 import di.Inject.instance
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import login.models.LoginAction
 import login.models.LoginEvent
@@ -30,7 +31,7 @@ class LoginViewModel : BaseSharedViewModel<LoginViewState, LoginAction, LoginEve
 
     private fun sendLogin() {
         viewState = viewState.copy(isSending = true)
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.Default) {
             viewState = try {
                 val response = authRepository.login(viewState.email, viewState.password)
                 if (response.token.isNotBlank()) {
@@ -46,8 +47,10 @@ class LoginViewModel : BaseSharedViewModel<LoginViewState, LoginAction, LoginEve
     }
 
     private fun checkUserLoggedIn() {
-        if (authRepository.isUserLoggedIn()) {
-            viewAction = LoginAction.OpenMainFlow
+        viewModelScope.launch(Dispatchers.Default) {
+            if (authRepository.isUserLoggedIn()) {
+                viewAction = LoginAction.OpenMainFlow
+            }
         }
     }
 
