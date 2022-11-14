@@ -29,6 +29,10 @@ kotlin {
              */
             isStatic = false
             baseName = "SharedSDK"
+            /**
+             * SqlDelight без этого не работает в iOS
+             */
+            linkerOpts.add("-lsqlite3")
 
             export(project(":common:core"))
             export(project(":common:core-utils"))

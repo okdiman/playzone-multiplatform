@@ -11,5 +11,5 @@ import org.kodein.di.instance
 val gamesModule = DI.Module("gamesModule") {
     bindProvider<GamesRepository> { GamesRepositoryImpl(instance(), instance()) }
     bindProvider { KtorGamesDataSource(instance()) }
-    bindProvider { SqlDelightGamesDataSource() }
+    bindProvider { SqlDelightGamesDataSource(instance()) }
 }

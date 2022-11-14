@@ -7,8 +7,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
@@ -25,6 +23,7 @@ import androidx.compose.ui.unit.sp
 import login.models.LoginEvent
 import login.models.LoginViewState
 import theme.Theme
+import widgets.ActionButton
 import widgets.CommonTextField
 
 @Composable
@@ -33,11 +32,6 @@ fun LoginView(viewState: LoginViewState, eventHandler: (LoginEvent) -> Unit) {
         modifier = Modifier.padding(top = 36.dp, start = 24.dp, end = 24.dp, bottom = 50.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        /**
-         *  не выношу строки в ресурсы, так как такой подход не будет работать с другими платформами
-         *  кроме Андроид
-         *  P.S. разобраться с либами для работы с ресурсами, например mockResources
-         */
         /**
          *  не выношу строки в ресурсы, так как такой подход не будет работать с другими платформами
          *  кроме Андроид
@@ -100,24 +94,8 @@ fun LoginView(viewState: LoginViewState, eventHandler: (LoginEvent) -> Unit) {
             )
         }
         Spacer(modifier = Modifier.height(40.dp))
-        Button(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(56.dp),
-            enabled = !viewState.isSending,
-            colors = ButtonDefaults.buttonColors(
-                backgroundColor = Theme.colors.primaryAction
-            ),
-            shape = Theme.shapes.default,
-            onClick = {
-                eventHandler(LoginEvent.LoginClick)
-            }) {
-            Text(
-                text = "Login now",
-                color = Theme.colors.primaryTextColor,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Bold
-            )
+        ActionButton(title = "Login Now", enabled = !viewState.isSending) {
+            eventHandler(LoginEvent.LoginClick)
         }
     }
 }

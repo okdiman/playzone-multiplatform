@@ -34,8 +34,8 @@ class SearchViewModel : BaseSharedViewModel<SearchViewState, SearchAction, Searc
         searchJob = viewModelScope.launch(Dispatchers.Default) {
             viewState = viewState.copy(query = query)
             delay(500)
-            val games = gamesRepository.searchGame(query)
             viewState = try {
+                val games = gamesRepository.searchGame(query)
                 viewState.copy(games = games)
             } catch (e: Exception) {
                 viewState.copy(games = emptyList())

@@ -42,7 +42,7 @@ fun CommonTextField(
         trailingIcon = trailingIcon,
         colors = TextFieldDefaults.textFieldColors(
             backgroundColor = Theme.colors.secondaryBackground,
-            textColor = Theme.colors.hintTextColor,
+            textColor = Theme.colors.secondaryTextColor,
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
             cursorColor = Theme.colors.highlightTextColor

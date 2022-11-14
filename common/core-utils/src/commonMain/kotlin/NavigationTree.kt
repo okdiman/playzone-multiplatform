@@ -18,4 +18,8 @@ object NavigationTree {
     enum class Search {
         Game
     }
+
+    enum class Admin {
+        Dashboard, Games, Events, CreateGame
+    }
 }

@@ -17,6 +17,8 @@ kotlin {
                 implementation(project(":common:core-compose"))
                 implementation(project(":common:core-utils"))
                 implementation(project(":common:auth:compose"))
+                implementation(project(":common:games:api"))
+                implementation(project(":common:main:compose"))
                 implementation(project(":common:umbrella-core"))
                 implementation(project(":common:umbrella-compose"))
 
